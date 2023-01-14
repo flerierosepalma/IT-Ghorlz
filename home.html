@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>IT; Gorlz | HOME</title>
+            <link rel="icon" href="potato corner_icon.png">
+            <link rel="stylesheet" href="dsa_styles.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<header>
+    <div class="header">
+        <i class="fa fa-file" style="top: 16px; padding-left: 3%; padding-right: 1%; font-size: 30px; color: yellow; position: absolute; "></i>
+        <i class="fa fa-user" style="top: 16px; padding-left: 80%; padding-right: 1%; font-size: 35px; color: yellow; position: absolute; "></i>
+        <p href="#" class="header-text-a">Admin</p>
+        <p href="#" class="header-text">Inventory File Maintenance</p>
+    
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Developers</a>
+                <a href="index.html">Log-out</a>
+            </div>
+            
+            <div id="main">
+                <span class="nav" onclick="openNav()">&#9776;</span>
+            </div>
+            
+            <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginRight = "250px";
+            }
+            
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginRight= "0";
+            }
+            </script>
+      </div>
+      
+    </header>
+    
+    <body class= "background">
+    <body>
+
+    <section>
+        <img alt="" class="home-logo" src="logo.png"> </i>
+            <div class="form-box-home">
+                <p class= "text-home">WHAT WILL YOU <br> CHANGE?</p>
+                
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button' onclick='flavor()'class='toggle-btn'>FLAVOR</button>
+                    <button type='button' onclick='size()'class='toggle-btn'>SIZE</button>
+                </div>
+
+            <!--FLAVOR FORM-->
+                <form id='flavor' class='home-flavor' method="post">
+					<div><button type='button' onclick="showPopup(); check()" class="button-add">Add Flavor</button>
+                    <button type='button' class="button-search">Search Flavor</button>
+                    <button type='button' class="button-display">Display Flavor</button>
+                    <button type='button' class="button-delete">Delete Flavor</button>
+                    <button type='button' class="button-update">Update Flavor</button>
+                    </div>
+				</form>
+                
+			<!--SIZE FORM-->
+            
+				<form id='size' class='home-size' method="post">
+                    <button type='button' onclick="showPopup()" class="button-add">Add Size</button>
+                    <button type='button' class="button-search">Search Size</button>
+                    <button type='button' class="button-display">Display Size</button>
+                    <button type='button' class="button-delete">Delete Size</button>
+                    <button type='button' class="button-update">Update Size</button>
+				</form>
+                
+            <!-- POP UP -->
+
+        <!-- Add Flavor Function-A -->
+            <div class="popup">
+                <div class="blocker" onclick="hidePopup()"></div>
+                <div class="contents">
+                    <form id= "add_flavor" action="home.html">
+                    <input type='text' class='add' id='addflavor' name='addflavor' placeholder='Enter here' required>
+                    <button type='button' class="button-back" onclick="document.location='home.html'">BACK</button>
+                    <button type='submit' onclick="addFlavor()" class="button-add-submit">ADD</button>
+                </form>
+                </div>
+            </div>
+            <script>
+                const popup = document.querySelector('.popup');
+                function showPopup() {
+                    popup.classList.add('open');
+                }
+                function hidePopup() {
+                    popup.classList.remove('open');
+                }
+                        var form = document.getElementById("add_flavor");
+                        function addFlavor() {
+                            if (form.checkValidity()) {
+                        alert("Successfully Added!");
+                        }
+                    }
+                    </script>
+
+
+              <!-- Add Size Function-->
+                <div class="popup">
+                    <div class="blocker" onclick="hidePopup()"></div>
+                    <div class="contents">
+                        <form id= "add_size" action="home.html">
+                        <input type='text' class='add' id='addsize' name='addsize' placeholder='Enter here' required>
+                        <button type='button' class="button-back" onclick="document.location='home.html'">BACK</button>
+                        <button type='submit' onclick="addSize()" class="button-add-submit">ADD</button>
+                    </form>
+                    </div>
+                </div>
+                <script>
+                    const popup = document.querySelector('.popup');
+                    function showPopup() {
+                        popup.classList.add('open');
+                    }
+                    function hidePopup() {
+                        popup.classList.remove('open');
+                    }
+                            var form = document.getElementById("add_size");
+                            function addSize() {
+                                if (form.checkValidity()) {
+                            alert("Successfully Added!");
+                            }
+                        }
+                        </script> 
+
+     <!-- TOGGLE FUNCTION  -->
+     <script>
+        var x=document.getElementById('flavor');
+		var y=document.getElementById('size');
+		var z=document.getElementById('btn');
+		function size()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function flavor()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+
+	<script>
+        var modal = document.getElementById('flavor-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    </section>
+
+    <footer class="footer">
+    <div class="chekered-box">
+        <table>
+            <tr>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+            </tr>
+    
+            <tr>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+            </tr>
+    
+            <tr>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+                <td> </td>
+                <td class = "highlight"> </td>
+            </tr>
+        </table>
+    </div>
+</footer>
+
+</html>
+</body>
+   
+
+        
